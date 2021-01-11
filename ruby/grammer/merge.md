@@ -1,8 +1,4 @@
-# 概要
-
-学んだことをメモ的に書いていく
-
-## merge
+# merge
 
 [公式doc](https://docs.ruby-lang.org/ja/latest/method/Hash/i/merge.html)
 
