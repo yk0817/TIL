@@ -6,3 +6,8 @@
 - 大事なのは依存をコントロールすること
 
 ## 依存関係をコントロールする
+- Service Locatorパターン
+  - 依存関係をクラスに持たせるらしい
+    - これによって開発環境によってみたいクラスを変えることができるみたい
+- IoC Containerパターン
+  - https://www.slideshare.net/trtraki/ioc-48749471
