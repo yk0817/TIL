@@ -76,3 +76,43 @@ public class Circle
   public List<User> Members { get; private set; }
 }
 ```
+
+```
+# ドメインサービス
+
+public class CircleService
+{
+  private readonly ICircleRepository circleRepository
+
+  public CircleService(ICircleRepository circleRepository)
+  {
+    this.circleRepository = circleRepository;
+  }
+
+  public bool Exists(Circle circle)
+  {
+    var duplicated = circleRepository.Find(circle.Name);
+    return duplicated != null;
+  }
+}
+```
+
+## ユースケースを組み立てる
+やり方
+- サークル処理作成のコマンドオブジェクト
+- アプリケーションサービスにサークル作成処理
+
+```
+# サークル処理作成のコマンドオブジェクト
+public class CircleCreateCommand
+{
+  public CircleCreateCommand(string userId, string name)
+  {
+    UserId = userId;
+    Name = name;
+  }
+
+  public string UserId { get; }
+  public string Name { get; }
+}
+```
